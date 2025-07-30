@@ -208,6 +208,17 @@ public class Flappy_bird extends JPanel implements ActionListener, KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             // Jump when space is pressed
             velocityY = -9; // Reset velocity for jump
+
+            if(gameOver){
+                // Reset game state
+                bird.y = boardHeight / 2;
+                bird.x = boardWidth / 8;
+                pipes.clear();
+                score = 0;
+                gameOver = false;
+                placepipesTimer.start();
+                gameLoop.start();
+            }
         }
     }
 
