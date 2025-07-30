@@ -2,9 +2,6 @@ package src;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.nio.channels.Pipe;
-import java.security.Key;
-
 import javax.swing.*;
 import java.util.Random;
 import java.util.ArrayList;
@@ -209,7 +206,7 @@ public class Flappy_bird extends JPanel implements ActionListener, KeyListener {
             // Jump when space is pressed
             velocityY = -9; // Reset velocity for jump
 
-            if(gameOver){
+            if (gameOver) {
                 // Reset game state
                 bird.y = boardHeight / 2;
                 bird.x = boardWidth / 8;
