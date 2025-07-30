@@ -2,11 +2,13 @@ package src;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.security.Key;
+
 import javax.swing.*;
 import java.util.Random;
 import java.util.ArrayList;
 
-public class Flappy_bird extends JPanel implements ActionListener {
+public class Flappy_bird extends JPanel implements ActionListener,KeyListenerke {
     int boardWidth = 360;
     int boardHeight = 640;
 
@@ -36,7 +38,8 @@ public class Flappy_bird extends JPanel implements ActionListener {
 
     // game logic
     Bird bird;
-    int velocityY = -6;
+    int velocityY = -9;
+    int gravity=1;
 
     Timer gameLoop;
 
@@ -77,14 +80,33 @@ public class Flappy_bird extends JPanel implements ActionListener {
 
     public void jump() {
         // bird         
-
+        velocityY +=gravity;
         bird.y += velocityY;
+        bird.y =Math.max(bird.y, 0); // Prevent bird from going above the top
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         jump();
         repaint();
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'keyTyped'");
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'keyPressed'");
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'keyReleased'");
     }
 
 }
