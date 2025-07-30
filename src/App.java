@@ -19,6 +19,7 @@ public static void main(String[] args) throws Exception {
   Flappy_bird gamePanel = new Flappy_bird();
   frame.add(gamePanel);
   frame.pack();
+  gamePanel.requestFocus();
   frame.setVisible(true);
 
 
